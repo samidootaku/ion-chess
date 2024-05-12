@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: #000;
+  background-image: url("photos/image22.png");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+.logo {
+  width: 40%;
+}
+.title {
+  font-size: 1.8rem;
+  font-family: Bruno Ace;
+  color: #00ccff;
+  filter: drop-shadow(2px 2px 2px #737d9f84);
+}
+#form {
+  margin-top: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+#form input,
+select {
+  width: 80%;
+  height: 35px;
+  color: azure;
+  background-color: rgba(245, 245, 245, 0.288);
+  border: solid white 2px;
+  border-radius: 10px;
+  text-indent: 10px;
+  font-family: Bruno Ace;
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1rem;
+}
+select {
+  background-color: grey;
+}
+::placeholder {
+  color: rgba(255, 255, 255, 0.616);
+}
+#sign {
+  width: 30%;
+  height: 35px;
+  color: rgba(0, 0, 0, 0.71);
+  background-color: rgba(245, 245, 245, 0.731);
+  border: solid white 2px;
+  border-radius: 10px;
+  font-family: Bruno Ace;
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1rem;
+  cursor: pointer;
+}
+#info {
+  text-align: center;
+  font-size: 1.3rem;
+  font-family: Bruno Ace;
+  color: #00ccff;
+  filter: drop-shadow(2px 2px 2px #737d9f84);
+  margin: 0 22.5px;
+}
+a {
+  font-family: Bruno Ace, sans-serif;
+  color: white;
+  text-decoration: none;
+  padding: 10px 40px;
+  width: 30%;
+  height: 35px;
+  color: rgba(0, 0, 0, 0.71);
+  background-color: rgba(245, 245, 245, 0.731);
+  border: solid white 2px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1rem;
+  text-align: center;
+}
+/* For larger screens, e.g., PCs */
+@media screen and (min-width: 1024px) {
+  .logo {
+    width: 30%;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  #form {
+    margin-top: 15%;
+  }
+  #form input,
+  select {
+    width: 50%;
+  }
+  a {
+    width: 20%;
+  }
+}
