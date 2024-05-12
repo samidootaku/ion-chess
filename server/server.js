@@ -4,7 +4,7 @@ app.use(express.json());
 const cors = require("cors");
 app.use(
   cors({
-    orogin: ["https://ionchess.vercel.app/"],
+    origin: ["https://ion-chess.vercel.app"],
     methods: ["POST", "GET"],
     credentials: true,
   })

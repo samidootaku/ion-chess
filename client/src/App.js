@@ -10,7 +10,7 @@ export default function App() {
   const titleRef = useRef(null);
   const createUser = () => {
     if (name && email) {
-      Axios.post("http://localhost:3001/createUsers", {
+      Axios.post("https://ion-chess-api.vercel.app/createUsers", {
         name: name,
         email: email,
         level: level,
@@ -151,4 +151,4 @@ export default function App() {
       </div>
     </>
   );
-};
+}
