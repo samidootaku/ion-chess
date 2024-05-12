@@ -13,7 +13,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 const password = process.env.PASSWORD;
 mongoose.connect(
-  `mongodb+srv://sikou:${password}@sikou.ss8bkcc.mongodb.net/?retryWrites=true&w=majority&appName=sikou`
+  `mongodb+srv://sikou:ines12345@sikou.ss8bkcc.mongodb.net/?retryWrites=true&w=majority&appName=sikou`
 );
 
 const UserModel = require("./models/Users");
