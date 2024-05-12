@@ -1,35 +1,28 @@
-/* const express = require("express");
-const app = express();
-app.use(express.json());
-const cors = require("cors");
-app.use(
-  cors({
-    origin: ["https://ion-chess.vercel.app"],
-    methods: ["POST", "GET"],
-    credentials: true,
-  })
-);
+// server.js
+
+const { json } = require("micro");
+const { send } = require("micro");
+const cors = require("micro-cors")();
 const mongoose = require("mongoose");
 require("dotenv").config();
-const password = process.env.PASSWORD;
-mongoose.connect(
-  `mongodb+srv://sikou:ines12345@sikou.ss8bkcc.mongodb.net/?retryWrites=true&w=majority&appName=sikou`
-);
 
 const UserModel = require("./models/Users");
 
-app.get("/users", async (req, res) => {
-  const users = await UserModel.find();
-  res.json(users);
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 
-app.post("/createUsers", async (req, res) => {
-  const newUser = new UserModel(req.body);
-  await newUser.save();
-  res.json(newUser);
+module.exports = cors(async (req, res) => {
+  if (req.method === "GET" && req.url === "/users") {
+    const users = await UserModel.find();
+    return send(res, 200, users);
+  } else if (req.method === "POST" && req.url === "/createUsers") {
+    const data = await json(req);
+    const newUser = new UserModel(data);
+    await newUser.save();
+    return send(res, 201, newUser);
+  } else {
+    return send(res, 404, "Not Found");
+  }
 });
-
-app.listen("3001", () => {
-  console.log("server works");
-});
- */
