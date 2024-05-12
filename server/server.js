@@ -2,7 +2,13 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 const cors = require("cors");
-app.use(cors());
+app.use(
+  cors({
+    orogin: ["https://ionchess.vercel.app/"],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 const mongoose = require("mongoose");
 const password = process.env.PASSWORD;
 mongoose.connect(
