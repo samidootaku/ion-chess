@@ -10,6 +10,7 @@ app.use(
   })
 );
 const mongoose = require("mongoose");
+require("dotenv").config();
 const password = process.env.PASSWORD;
 mongoose.connect(
   `mongodb+srv://sikou:${password}@sikou.ss8bkcc.mongodb.net/?retryWrites=true&w=majority&appName=sikou`
